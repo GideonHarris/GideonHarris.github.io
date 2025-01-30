@@ -1,30 +1,66 @@
-ul {
+@import "https://unpkg.com/open-props/easings.min.css";
+
+@layer demo {
+  ul {
     --arc: 5deg;
-  
+    
     @media (hover) and (prefers-reduced-motion: no-preference) {
-      &:has(li:nth-child(1):hover) {--target: 1}
-      &:has(li:nth-child(2):hover) {--target: 2}
-      &:has(li:nth-child(3):hover) {--target: 3}
-      &:has(li:nth-child(4):hover) {--target: 4}
-      &:has(li:nth-child(5):hover) {--target: 5}
-      &:has(li:nth-child(6):hover) {--target: 6}
-      &:has(li:nth-child(7):hover) {--target: 7}
-      &:has(li:nth-child(8):hover) {--target: 8}
-      &:has(li:nth-child(9):hover) {--target: 9}
-  
+      &:has(li:nth-child(1):hover) { --target: 1 }
+      &:has(li:nth-child(2):hover) { --target: 2 }
+      &:has(li:nth-child(3):hover) { --target: 3 }
+      &:has(li:nth-child(4):hover) { --target: 4 }
+      &:has(li:nth-child(5):hover) { --target: 5 }
+      &:has(li:nth-child(6):hover) { --target: 6 }
+      &:has(li:nth-child(7):hover) { --target: 7 }
+      &:has(li:nth-child(8):hover) { --target: 8 }
+      &:has(li:nth-child(9):hover) { --target: 9 }
+      
       & > li {
         transform-origin: -200% 50%;
-        transition: transform 2s var(--ease-spring-5), opacity 0.3s var(--ease-3);
+        transition: 
+          transform 2s var(--ease-spring-5),
+          opacity .3s var(--ease-3);
       }
-  
+
       &:hover > li:not(:hover) {
         --distance-from-target: abs(var(--sibling-index) - var(--target));
         --distance-multiplier: var(--distance-from-target) * 15%; /* change 15% */
         --gradual-fadeout: calc(100% - var(--distance-multiplier));
         opacity: var(--gradual-fadeout);
-  
+        
         --angle: calc((var(--sibling-index) - var(--target)) * var(--arc));
         transform: rotateZ(var(--angle));
       }
     }
   }
+}
+
+
+
+
+
+
+@layer demo.support {
+  * {
+    box-sizing: border-box;
+    margin: 0;
+  }
+
+  html {
+    block-size: 100%;
+    color-scheme: dark light;
+  }
+
+  body {
+    min-block-size: 100%;
+    font-family: system-ui, sans-serif;
+
+    display: grid;
+    place-content: center;
+  }
+  
+  ul {
+    font-size: 2rem;
+    font-weight: 200;
+  }
+}
