@@ -58,12 +58,14 @@ body {
     font-size: 1.5em;
     line-height: 1.5em;
     padding:  1.5em;
-    color: white;
+    color: whitesmoke; 
   }
 
   .card article {
     height: 12em;
     background-color: rgba(0, 0, 0, 0.5);
+    color:whitesmoke;
+    padding:1em;
   }
 
   .card footer, header {
@@ -72,4 +74,9 @@ body {
     content: 3em;
   }
 
-  
+  #personal 
+  {
+    background-color: green;
+    font-family: monospace;
+  }
+
