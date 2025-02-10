@@ -55,10 +55,10 @@ body {
 
   .card header p {
     margin: 0em;
-    font-size: 0.938em;
-    line-height: 0.938em;
-    padding:  0.625em;
-    color: rgba (255,255,255); 
+    font-size: 1.5em;
+    line-height: 1.5em;
+    padding:  1.5em;
+    color: white;
   }
 
   .card article {
@@ -67,9 +67,9 @@ body {
   }
 
   .card footer, header {
-    height: 3.125em;
-    padding: 0.625em;
-    content: 1.875em;
+    height: 2em;
+    padding: 1em;
+    content: 3em;
   }
 
   
