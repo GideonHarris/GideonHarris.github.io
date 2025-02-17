@@ -70,6 +70,7 @@ body {
             inset 200px 0px 100px -100px #000a, 
             -4px 0 8px 2px #fff2;
         }
+        
     }
     img {
         position: absolute;
@@ -166,6 +167,22 @@ body {
 }
 
 @keyframes rotate360 { to { rotate: 360deg;} }
+@keyframes slideCard{
+    from {
+        margin-right: 0px;
+      }
+    
+      50% {
+        margin-right: 110px;
+        opacity: 0.5;
+      }
+    
+      to {
+        margin-right: 200px;
+        opacity: 0.2;
+      }
+      
+}
 @keyframes wobble {
     0% {
         transform: translateX(10px) translateY(20px) rotate(-3deg) scale(1);

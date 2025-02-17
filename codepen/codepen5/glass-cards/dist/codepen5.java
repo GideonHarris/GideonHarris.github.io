@@ -7,7 +7,8 @@ import java.awt.event.ActionListener;
 
 const name = document.querySelector(".button");
 
-function functionToExicute(){
-    
+function slideCard(){
+    var button = document.getElementById("Acting");
+    button.slideCard = "animate";
 }
 
