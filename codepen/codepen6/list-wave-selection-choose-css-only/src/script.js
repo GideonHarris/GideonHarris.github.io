@@ -1,0 +1,3 @@
+/*
+ NO JAVASCRIPT HERE
+*/

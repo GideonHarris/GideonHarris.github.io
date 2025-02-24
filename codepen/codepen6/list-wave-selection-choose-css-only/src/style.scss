@@ -1,0 +1,291 @@
+$selected: #088679;
+$active: darken($selected, 10%);
+$h: 60px;
+$w:400px;
+
+body {
+  background: #222;
+  color: #fff;
+  overflow: hidden;
+  height: 100%;
+  min-height: 100vh;
+  * {
+    box-sizing: border-box;
+  }
+}
+
+input.rad__li {
+  appearance: none;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 11;
+
+  &:after,
+  &:before {
+    content: "";
+    display: block;
+    width: 26px;
+    height: 26px;
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-65%);
+    border-radius: 40px;
+    border: solid 2px #444;
+  }
+  &:after {
+    width: 66px;
+    height: 66px;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 4px;
+    border: none;
+  }
+}
+
+input.rad__li.rad-off {
+  display: none;
+}
+ol {
+  margin: 0px;
+  padding: 0px;
+  max-width: 500px;
+  margin: 40px auto;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  transform:scale(.98);
+  &:hover {
+    cursor: pointer;
+  }
+  &:after {
+    position: absolute;
+    content: "";
+    height: $h;
+    width: 398px;
+    left: 0px;
+    top: 40%;
+    border: solid 2px lighten($active, 50%);
+    mix-blend-mode: screen;
+    background: darken($active, 10%);
+    opacity: 0;
+    border-radius: 12px;
+    z-index: -1;
+    display: block;
+    position: absolute;
+    transition: top 0.3s ease-out, transform 0.3s ease;
+    transition-delay: 0.2s;
+    pointer-events: none;
+
+    * {
+      transform-style: preserve3d;
+      cursor: pointer !important;
+    }
+  }
+  &:hover {
+    &:after {
+      pointer-events: none !important;
+    }
+  }
+  > li {
+    margin: 0px;
+    padding: 0px;
+    color: blue;
+    display: block;
+    height: calc($h + 6px);
+    z-index: 1;
+    padding-bottom: 6px;
+    perspective: 500px;
+    list-style:none;
+    > a {
+      display: flex;
+      text-decoration: none;
+      height: $h;
+      width: $w;
+      border: solid 2px #999;
+      border-radius: 12px;
+      flex-direction: row;
+      justify-items: center;
+      justify-content: center;
+      align-items: center;
+      color: #ccc;
+      font-family: helvetica;
+      font-size: 26px;
+    }
+    &:hover:not(:has(a > input.rad-on:checked)) {
+      cursor: pointer;
+      height: calc(var($h) + 12px);
+      padding-bottom: 10px;
+      > a {
+        cursor: pointer;
+        z-index: 9999;
+        border-color: lighten($active, 10%);
+        transform: scale(1.02) translateZ(30px);
+        transition: transform 0.2s ease, border-color 0.25s ease;
+        input.rad__li{
+          height: 105%;
+          &:before{
+          border-color: $active;
+        }
+        }
+      }
+    }
+    &:hover + li > a {
+      transform: scale(1.06) rotateX(-23deg);
+      transition: transform 0.15s ease;
+      transition-delay: 0.1s;
+    }
+    &:has(+ li:hover) {
+      height: calc(var($h) + 12px);
+      padding-bottom: 12px;
+      > a {
+        transform: scale(1.06) rotateX(16deg);
+        transition: transform 0.15s ease;
+        transition-delay: 0.1s;
+      }
+    }
+  }
+}
+ol {
+  &:has(li:hover) {
+    &:after {
+      opacity: 0.5;
+      left: -20px;
+      margin-top: -1px;
+      max-height: $h;
+      border-width: 3px;
+      width: 430px;
+      z-index: 99999;
+      transform: scale(1) translateZ(36px);
+      transition: all 0.2s ease, opacity 0.2s ease, top 0.2s ease-in;
+    }
+  }
+  &:has(li:hover a > input.rad-on:checked) {
+    &:after {
+      transition: all 0.1s ease;
+    }
+  }
+
+  li:has(+ li:hover a > input.rad-on:checked),
+  li:hover:has(a > input.rad-on:checked) {
+    height: calc(var($h) + 8px);
+  }
+
+  li:has(+ li:hover a > input.rad-on:checked) {
+    padding-bottom: 6px;
+  }
+
+  li > a:has(input.rad-on:checked) {
+    background: darken($selected, 10%);
+    color: lighten($selected, 70%);
+    > input.rad__li {
+      &:before {
+        opacity: 0.5;
+        top: 50%;
+        width: 28px;
+        height: 28px;
+        transform: translateY(-65%);
+        border-color: lighten($selected, 10%);
+      }
+      &:after {
+        opacity: 0.5;
+        top: 50%;
+        width: 19px;
+        height: 19px;
+        left: 27px;
+        box-shadow: none;
+        transform: translateY(-75%);
+        transition: all 0.2s ease;
+        background: lighten($selected, 10%);
+      }
+    }
+    input.rad__li.rad-off {
+      display: block;
+      opacity: 0;
+      z-index: 999999;
+    }
+  }
+
+  &:has(li:nth-child(1):hover) {
+    &:after {
+      top: -1px;
+    }
+  }
+  &:has(li:nth-child(2):hover) {
+    &:after {
+      top: 70px;
+    }
+  }
+  &:has(li:nth-child(3):hover) {
+    &:after {
+      top: 136px;
+    }
+  }
+  &:has(li:nth-child(4):hover) {
+    &:after {
+      top: 201px;
+    }
+  }
+  &:has(li:nth-child(5):hover) {
+    &:after {
+      top: 266px;
+    }
+  }
+  &:has(li:nth-child(6):hover) {
+    &:after {
+      top: 335px;
+    }
+  }
+  &:has(li:nth-child(7):hover) {
+    &:after {
+      top: 401px;
+    }
+  }
+  &:has(li:nth-child(8):hover) {
+    &:after {
+      top: 466px;
+    }
+  }
+  &:has(li:nth-child(9):hover) {
+    &:after {
+      top: 532px;
+    }
+  }
+  &:has(li > a > input.rad-on:checked) {
+    &:after {
+      opacity: 0;
+      top: 650px;
+    }
+  }
+  > li:hover:has(a > input.rad-on:checked) {
+    height: calc($h + 10px);
+    padding: 0px 0px 8px 0px;
+    > a {
+      margin-top: 1px;
+    }
+  }
+  > li:has(> a input.rad-on:checked) {
+    > a {
+      border-color: lighten($selected, 30%);
+      transform: none;
+    }
+    &:after {
+      content: "";
+      width: 80%;
+      height: 118%;
+      display: block;
+      background: transparent;
+      z-index: 99999999999;
+      position: absolute;
+    }
+  }
+}
+// checked on siblings
+ol > li:hover:has(> a input.rad-on:checked) + li > a,
+ol li:has(+ li > a input.rad-on:checked) > a {
+  transform: none;
+}
+//end sibling
