@@ -1,0 +1,85 @@
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: teal;
+    font-family: monospace;
+}
+nav{
+    height: 50vh;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height:20px;
+    background-color: wheat;
+    transition: 2s ease-in-out ;
+}
+nav a{
+    width:10vw;
+    text-align: center;
+    text-decoration: none;
+    color:teal;
+}
+
+
+img{
+    width:30vw;
+    height: 30vh;
+    animation-name: dvdBounce;
+    animation-duration: 15s;
+    animation-iteration-count: infinite;
+}
+
+#red-ball{
+    background-color: black;
+    width: 20px;
+    height:20px;
+    border-radius: 50%;
+    position: absolute;
+    left:5vw;
+    top:0;
+    transition: 3s ease-in-out ;
+}
+.nav:hover{
+    background-color: whitesmoke;
+}
+
+#red-ball:hover{
+
+    background-color: antiquewhite;
+}
+
+@keyframes dvdBounce{
+    from{
+        translate: -36vw 0;
+
+    }
+    10%{
+        translate: 35vw 36vw;
+    }
+    20%{
+        translate: -20vw -8vw;
+    }
+    25%{
+        translate: -36vw -2vw;
+    }
+    40%{
+        translate: 0vw 36vw;
+    }
+    60%{
+        translate: 36vw 0;
+    }
+    65%{
+        translate: 24vw -8vw;
+    }
+    75%{
+        translate: -35vw 36vw;
+    }
+    90%{
+        translate: 35vw -8vw;
+    }
+    to{
+        translate: -36vw 0;
+    }
+}
+
