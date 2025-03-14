@@ -1,0 +1,39 @@
+body {
+    min-height: 100vh;
+    display: flex; flex-direction: row; flex-wrap: wrap;
+    
+    background: #439C47;
+    font-family: "Mona-Sans", "sans-serif";
+	font-family: "Mona Sans", sans-serif;
+}
+
+header{
+    height: 50vh;
+    display: flex; flex-direction: column; flex-wrap: wrap;
+    justify-content: center; align-items: center; margin: 1vw;
+    height:20px;
+    column-gap: 10px;
+}
+
+
+.concertList{
+display: flex;
+    flex-direction: row 1fr 1fr 1fr 1fr;
+    flex-direction: column 1fr 1fr 1fr;
+}
+
+.concertCard{
+    color: whitesmoke;
+    margin: 10px;
+    width: 400px; height: 750px;
+    border-radius: 16px;
+    
+    border-radius: 16px;
+    padding: 10px;
+    background: #191919aa;
+    background: linear-gradient(
+        180deg,
+        #292929aa 0%,
+        #191919cc 50%
+    );
+}
