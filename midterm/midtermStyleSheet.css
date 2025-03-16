@@ -8,26 +8,38 @@ body {
 }
 
 header{
-    height: 50vh;
-    display: flex; flex-direction: column; flex-wrap: wrap;
-    justify-content: center; align-items: center; margin: 1vw;
-    height:20px;
-    column-gap: 10px;
+    height: 10vh;
+    width: 100vw;
+    position: sticky;
+    top: 0;
+    background-color: black;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    margin-bottom: 28px;
+    z-index: 999
 }
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 
 
 .concertList{
-display: flex;
-    flex-direction: row 1fr 1fr 1fr 1fr;
-    flex-direction: column 1fr 1fr 1fr;
+display: grid;
+    align-items: start;
+    grid-auto-flow: column;
+    
 }
 
 .concertCard{
+    /* styling our cards*/
     color: whitesmoke;
-    margin: 10px;
-    width: 400px; height: 750px;
-    border-radius: 16px;
-    
+    margin: 12px;
+    width: 30vw; height: 79vw;
     border-radius: 16px;
     padding: 10px;
     background: #191919aa;
@@ -36,4 +48,62 @@ display: flex;
         #292929aa 0%,
         #191919cc 50%
     );
+    
+    h2{
+        font-size: 2vw;
+    }
+     /* giving us a cool hover feater IF IT WILL WORK FOR ONCE*/
+    backdrop-filter: blur(4px);
+    box-shadow: inset -4px -4px 8px 8px black,
+    inset 0 -2px 2px 0 black;
+    
+    transition: box-shadow 0.8s ease-in-out;
+        cursor: pointer;
+        &:hover {
+            box-shadow: 
+            0 0 0 1px #fff3, 
+            inset 200px 0px 100px -100px #000a, 
+            -4px 0 8px 2px #fff2;
+        }
+    
 }
+
+.concertInfo{
+    font-size: 1.5vw;
+    line-height: 1.5;
+    margin: 10px;
+    
+}
+
+.cardDescription{
+    border: whitesmoke;
+    margin: 10px;
+    font-size: 1.1vw;
+    object-fit: scale-down;
+    overflow: scroll;
+}
+
+.concertCard:hover{
+    transform: scale(1.04);
+    
+}
+
+@media screen and (max-width:400px)
+  {
+    .concertList{
+      flex-direction: column;
+    }
+  }
+
+  @media screen and (min-width: 500px){
+    .concertList{
+        display: grid;
+        align-items: start;
+        grid-auto-flow: column;
+    }
+    
+  }
+
+
+
+
