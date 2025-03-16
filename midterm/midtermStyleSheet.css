@@ -29,7 +29,7 @@ header{
 
 
 .concertList{
-display: grid;
+    display: grid;
     align-items: start;
     grid-auto-flow: column;
     
@@ -88,14 +88,14 @@ display: grid;
     
 }
 
-@media screen and (max-width:400px)
-  {
+@media screen and (max-width:400px){
     .concertList{
-      flex-direction: column;
+        display: flex;
+        grid-template-columns: 1fr;
     }
-  }
+}
 
-  @media screen and (min-width: 500px){
+@media screen and (min-width: 400px){
     .concertList{
         display: grid;
         align-items: start;
