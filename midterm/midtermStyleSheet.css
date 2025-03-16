@@ -20,13 +20,6 @@ header{
     z-index: 999
 }
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-
 
 .concertList{
     display: grid;
@@ -81,6 +74,7 @@ header{
     font-size: 1.1vw;
     object-fit: scale-down;
     overflow: scroll;
+    float:left;
 }
 
 .concertCard:hover{
@@ -91,7 +85,8 @@ header{
 @media screen and (max-width:400px){
     .concertList{
         display: flex;
-        grid-template-columns: 1fr;
+        flex-direction: column 1fr;
+        
     }
 }
 
