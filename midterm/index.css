@@ -106,18 +106,22 @@ header{
     }
     .concertCard{
         width: 80vw;
-        height: 270vw;
+        height: 300vw;
         font-size: 7vw;
-        margin:10px;
+        margin:20px;
     }
     .header{
         height: 30vw;
+        width:80vw;
+        margin-bottom: 10px;
+        position:fixed;
 
     }
+    
     .concertInfo{
         font-size: 4vw;
     }
-    .concertList.cardDescription{
+    .cardDescription{
         font-size: 4vw;
     }
   }
