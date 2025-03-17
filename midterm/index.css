@@ -40,6 +40,7 @@ header{
         #292929aa 0%,
         #191919cc 50%
     );
+    font-size: 2vw;
     
     h2{
         font-size: 2vw;
@@ -104,21 +105,24 @@ header{
         justify-content: center;
     }
     .concertCard{
-        width:80vw;
-        height: 99vw;
+        width: 80vw;
+        height: 270vw;
         font-size: 7vw;
+        margin:10px;
     }
     .header{
         height: 30vw;
 
     }
     .concertInfo{
-        font-size: 5vw;
+        font-size: 4vw;
     }
     .concertList.cardDescription{
-        font-size: 5vw;
+        font-size: 4vw;
     }
   }
+
+
 
 @media (width > 500px){
     .concertRow{
