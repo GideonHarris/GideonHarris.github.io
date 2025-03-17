@@ -97,6 +97,7 @@ header{
     .concertRow{
         
         grid-template-columns: 1fr;
+        justify-content: center;
     }
     .concertCard{
         width:89vw;
