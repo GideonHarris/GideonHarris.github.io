@@ -109,6 +109,13 @@ header{
     }
     .header{
         height: 30vw;
+
+    }
+    .concertInfo{
+        font-size: 30vw;
+    }
+    .concertList.cardDescription{
+        font-size: 28vw;
     }
   }
 
