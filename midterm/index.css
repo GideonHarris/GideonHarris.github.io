@@ -94,6 +94,13 @@ header{
         
         grid-template-columns: 1fr;
     }
+    .concertCard{
+        width:89vw;
+        height: 95vw;
+    }
+    .header{
+        height: 25vw;
+    }
   }
 
 @media (width > 500px){
