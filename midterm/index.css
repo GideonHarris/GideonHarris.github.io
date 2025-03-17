@@ -1,6 +1,6 @@
 body {
     min-height: 100vh;
-    display: flex; flex-direction: row; flex-wrap: wrap;
+    
     
     background: #439C47;
     font-family: "Mona-Sans", "sans-serif";
@@ -8,7 +8,7 @@ body {
 }
 
 header{
-    height: 10vh;
+    height: 12.5vh;
     width: 100vw;
     position: sticky;
     top: 0;
@@ -24,15 +24,14 @@ header{
 .concertList{
     display: grid;
     align-items: start;
-    grid-auto-flow: column;
-    
 }
 
 .concertCard{
     /* styling our cards*/
     color: whitesmoke;
+    display: inline-block;
     margin: 12px;
-    width: 30vw; height: 79vw;
+    width: 29vw; height: 85vw;
     border-radius: 16px;
     padding: 10px;
     background: #191919aa;
@@ -82,21 +81,27 @@ header{
     
 }
 
-@media screen and (max-width:400px){
-    .concertList{
-        display: flex;
-        flex-direction: column 1fr;
-        
-    }
+.concertRow
+{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-content: row;
 }
 
-@media screen and (min-width: 400px){
-    .concertList{
-        display: grid;
-        align-items: start;
-        grid-auto-flow: column;
+@media (width < 500px)
+  {
+    .concertRow{
+        
+        grid-template-columns: 1fr;
     }
-    
+  }
+
+@media (width > 500px){
+    .concertRow{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        align-items: row;
+    }
   }
 
 
