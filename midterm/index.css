@@ -88,6 +88,10 @@ header{
     align-content: row;
 }
 
+#r10{
+    justify-self: center;
+}
+
 @media (width < 500px)
   {
     .concertRow{
