@@ -1,0 +1,35 @@
+body {
+    min-height: 100vh;
+    display: flex; flex-direction: column; flex-wrap: wrap;
+    justify-content:center; align-items:center; margin: 0;
+    background: #343434;
+    background: linear-gradient(
+        180deg,
+        #343434 0%,
+        #252525 100%
+    );
+    font-family: "Mona-Sans", sans-serif;
+	font-family: "Mona Sans", sans-serif;
+}
+
+
+label{
+    color: antiquewhite;
+    font-size: 30px;
+}
+input{
+    margin: 10px;
+}
+
+input{
+    size: 40px;
+    font-size: 30px;
+    border-radius: 5px;
+}
+
+button{
+    size:40px;
+    font-size: 30px;
+    border-radius: 10px;
+    background-color:#ffc78e;
+}
