@@ -1,0 +1,45 @@
+<!DOCTYPE html> 
+<html> 
+
+<head> 
+	<title>Change Text using innerHTML</title> 
+</head> 
+
+<body> 
+	<h1 style="background-color: lightblue"> 
+		Hello Geeks!. 
+	</h1> 
+	<p> 
+		This is a simple paragraph. 
+	</p> 
+	<div> 
+		<p> 
+			Another paragraph inside a div. 
+		</p> 
+	</div> 
+	<button id="changeContentButton"> 
+		Change Content 
+	</button> 
+	<script> 
+		const elements = 
+				document.querySelectorAll("*"); 
+		const buttonText = 
+				"Welcome to GeeksforGeeks......"; 
+		
+		// Function to change content 
+		function changeContent() { 
+			for (const element of elements) { 
+				element.innerHTML = buttonText; 
+			} 
+		} 
+		
+		// Add a click event listener to the button 
+		const changeButton = 
+				document.getElementById("changeContentButton"); 
+		changeButton.addEventListener( 
+				"click", changeContent); 
+	</script> 
+</body> 
+
+</html>
+
