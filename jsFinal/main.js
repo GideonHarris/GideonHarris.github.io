@@ -1,6 +1,7 @@
 // grabbing the things we need from our html 
-const buttonVar = document.querySelector("inputButton");
+const buttonVar = document.querySelector(".inputButton");
 var message = document.getElementById("message");
+var theirNumber = document.querySelector(".inputNumber");
 
 //declaring all of our variables we will use
 let count = 0;
@@ -11,6 +12,7 @@ var lableToChange = document.querySelector("label");
 
 // Our button click function 
 buttonVar.addEventListener("click", function(){
+    
     thatsNotYourNumber(count, goal);
     count++;
 });
@@ -25,16 +27,35 @@ function random(min, max) {
   };
 
   function randomNum() {
-    return random(0, 50);
-    // 50 because I am cruel
+    return random(0, 10);
   };
+
+//function to change the user's number
+function changeTheirNumber(TheirNumber){
+    let changedNumber = TheirNumber.split('').reduce((acc, char) => acc + char, '');
+    let pos = random(0, changedNumber.length-1);
+    let digitChanged = changedNumber[pos];
+    if (digitChanged === 9){
+        digitChanged = Number(digitChanged);
+        digitChanged = 0;
+    }
+    else {
+        digitChanged = Number(digitChanged);
+        digitChanged++;
+    }
+
+    digitChanged = digitChanged.toString();
+    changedNumber[pos] = digitChanged;
+    return changedNumber;
+    
+};
 
 
 //our main function that rights our new message 
 function thatsNotYourNumber(Count, Goal){
     let randomMessage = thingsToSay[random(0, thingsToSay.length - 1)];
     if (Count === 0){
-        lableToChange.innerHTML = "Sorry, something went wrong. Please enter your number again:";
+        lableToChange.textContent = "Sorry, something went wrong. Please enter your number again:";
     }
     else if(Count === Goal){
         lableToChange.innerHTML = "Oh ok that is your number, thanks.";
