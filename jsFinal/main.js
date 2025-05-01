@@ -12,8 +12,9 @@ var lableToChange = document.querySelector("label");
 
 // Our button click function 
 buttonVar.addEventListener("click", function(){
-    
-    thatsNotYourNumber(count, goal);
+    let newNumber = changeTheirNumber(theirNumber);
+    theirNumber.textContent = newNumber;
+    //thatsNotYourNumber(count, goal);
     count++;
 });
 
