@@ -1,7 +1,7 @@
 // grabbing the things we need from our html 
 const buttonVar = document.querySelector(".inputButton");
 
-var theirNumber = document.querySelector(".inputNumber").value;
+var inputVar = document.querySelector("input").value;
 
 //declaring all of our variables we will use
 let count = 0;
@@ -14,16 +14,17 @@ var lableToChange = document.querySelector("label");
 // Our button click function 
 buttonVar.addEventListener("click", function(){
     //let newNumber = changeTheirNumber(theirNumber);
-    if (weGotThem === 1){
-        lableToChange.textContent = "Please confirm your number " + theirNumber + " is your number";
-        buttonVar.textContent = "Confirm";
-    }
-    //theirNumber.textContent = newNumber;
-    //thatsNotYourNumber(count, goal);
     
-    else{
+    if (weGotThem === 1){
+        fuckingWithThem();
+    }
 
+    else{
+        thatsNotYourNumber(count, goal);
     };
+
+    //theirNumber.textContent = newNumber;
+    
 
     //clearing the number
     //theirNumber.value = "";
@@ -32,7 +33,8 @@ buttonVar.addEventListener("click", function(){
 
 
 function fuckingWithThem(){
-
+    lableToChange.textContent = "Please confirm your number " + inputVar + " is your number";
+    buttonVar.textContent = "Confirm";
 };
 
 const thingsToSay = ["lol no shot thats your number, please try again", "Wait no I think that's my number, try again","nah, I don't believe you", "Just type it in again", "wait hold on I forgot, try again", "What? Try again", "wait, lemme grab a pen, enter it again", "Wait I swear that is my number, try again", "I think you're lying, please enter your REAL number", "Eat shit, try agian", "Meow. Try again."];
