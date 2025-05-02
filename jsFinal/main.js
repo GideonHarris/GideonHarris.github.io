@@ -2,9 +2,11 @@
 const buttonVar = document.querySelector(".inputButton");
 
 //declaring all of our variables we will use
-let count = 0;
-let goal = randomNum();
-let weGotThem = 1;
+let count1 = 0;
+let count2 = 0;
+let goal1 = randomNum();
+let goal2 = randomNum();
+
 
 //looking for the lable we want to change
 var lableToChange = document.querySelector("label");
@@ -12,29 +14,31 @@ var lableToChange = document.querySelector("label");
 // Our button click function 
 buttonVar.addEventListener("click", function(){
     //let newNumber = changeTheirNumber(theirNumber);
-    const inputVar = document.getElementById("userInput");
-    const value = inputVar.value;
+    let inputVar = document.getElementById("userInput");
+    let value = inputVar.value;
     
-    if (weGotThem === 1){
-        fuckingWithThem(value);
+    
+    if (count1 < goal1){
+        inputVar.value = fuckingWithThem(value);
+        count1++;
     }
-
     else{
-        thatsNotYourNumber(count, goal);
-    };
-
-    //theirNumber.textContent = newNumber;
-    
-
-    //clearing the number
-    //theirNumber.value = "";
-    count++;
+        thatsNotYourNumber(count2, goal2);
+        //clearing the number
+        inputVar.value = "";
+        count2++;
+    };    
 });
 
 
 function fuckingWithThem(Value){
-    lableToChange.textContent = "Please confirm your number " + Value + " is your number";
+    
     buttonVar.textContent = "Confirm";
+    fuckedValue = Number(Value);
+    fuckedValue = fuckedValue + exponentials(10, random(0,8));
+    // 8 because I don't want an accidental 11 digit phone number
+    lableToChange.textContent = "Please confirm your number " + fuckedValue + " is your number";
+    return fuckedValue.toString();
 };
 
 const thingsToSay = ["lol no shot thats your number, please try again", "Wait no I think that's my number, try again","nah, I don't believe you", "Just type it in again", "wait hold on I forgot, try again", "What? Try again", "wait, lemme grab a pen, enter it again", "Wait I swear that is my number, try again", "I think you're lying, please enter your REAL number", "Eat shit, try agian", "Meow. Try again."];
