@@ -1,8 +1,6 @@
 // grabbing the things we need from our html 
 const buttonVar = document.querySelector(".inputButton");
 
-var inputVar = document.querySelector("input").value;
-
 //declaring all of our variables we will use
 let count = 0;
 let goal = randomNum();
@@ -14,9 +12,11 @@ var lableToChange = document.querySelector("label");
 // Our button click function 
 buttonVar.addEventListener("click", function(){
     //let newNumber = changeTheirNumber(theirNumber);
+    const inputVar = document.getElementById("userInput");
+    const value = inputVar.value;
     
     if (weGotThem === 1){
-        fuckingWithThem();
+        fuckingWithThem(value);
     }
 
     else{
@@ -32,8 +32,8 @@ buttonVar.addEventListener("click", function(){
 });
 
 
-function fuckingWithThem(){
-    lableToChange.textContent = "Please confirm your number " + inputVar + " is your number";
+function fuckingWithThem(Value){
+    lableToChange.textContent = "Please confirm your number " + Value + " is your number";
     buttonVar.textContent = "Confirm";
 };
 
