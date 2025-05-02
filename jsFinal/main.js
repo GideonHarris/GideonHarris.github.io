@@ -1,22 +1,39 @@
 // grabbing the things we need from our html 
 const buttonVar = document.querySelector(".inputButton");
-var message = document.getElementById("message");
-var theirNumber = document.querySelector(".inputNumber");
+
+var theirNumber = document.querySelector(".inputNumber").value;
 
 //declaring all of our variables we will use
 let count = 0;
 let goal = randomNum();
+let weGotThem = 1;
 
 //looking for the lable we want to change
 var lableToChange = document.querySelector("label");
 
 // Our button click function 
 buttonVar.addEventListener("click", function(){
-    let newNumber = changeTheirNumber(theirNumber);
-    theirNumber.textContent = newNumber;
+    //let newNumber = changeTheirNumber(theirNumber);
+    if (weGotThem === 1){
+        lableToChange.textContent = "Please confirm your number " + theirNumber + " is your number";
+        buttonVar.textContent = "Confirm";
+    }
+    //theirNumber.textContent = newNumber;
     //thatsNotYourNumber(count, goal);
+    
+    else{
+
+    };
+
+    //clearing the number
+    //theirNumber.value = "";
     count++;
 });
+
+
+function fuckingWithThem(){
+
+};
 
 const thingsToSay = ["lol no shot thats your number, please try again", "Wait no I think that's my number, try again","nah, I don't believe you", "Just type it in again", "wait hold on I forgot, try again", "What? Try again", "wait, lemme grab a pen, enter it again", "Wait I swear that is my number, try again", "I think you're lying, please enter your REAL number", "Eat shit, try agian", "Meow. Try again."];
 
@@ -31,22 +48,17 @@ function random(min, max) {
     return random(0, 10);
   };
 
+function exponentials(base, power){
+    let result = base ** power;
+    return result;
+}
+
 //function to change the user's number
 function changeTheirNumber(TheirNumber){
-    let changedNumber = TheirNumber.split('').reduce((acc, char) => acc + char, '');
-    let pos = random(0, changedNumber.length-1);
-    let digitChanged = changedNumber[pos];
-    if (digitChanged === 9){
-        digitChanged = Number(digitChanged);
-        digitChanged = 0;
-    }
-    else {
-        digitChanged = Number(digitChanged);
-        digitChanged++;
-    }
-
-    digitChanged = digitChanged.toString();
-    changedNumber[pos] = digitChanged;
+    let changedNumber = Number(TheirNumber);
+    changedNumber = changedNumber + 1000;
+    // limit of 9 on the random generator so that we never have an 11 digit number 
+    
     return changedNumber;
     
 };
@@ -59,9 +71,11 @@ function thatsNotYourNumber(Count, Goal){
         lableToChange.textContent = "Sorry, something went wrong. Please enter your number again:";
     }
     else if(Count === Goal){
-        lableToChange.innerHTML = "Oh ok that is your number, thanks.";
+        //our button dissapears when its done
+        lableToChange.textContent = "Oh ok that is your number, thanks.";
+        buttonVar.style.display = "none";
     }
     else{
-        lableToChange.innerHTML = randomMessage;
+        lableToChange.textContent = randomMessage;
     };
 };
