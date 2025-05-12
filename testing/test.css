@@ -179,6 +179,9 @@ body {
 }
 
 /*all of our animations*/
+.animationjs{
+    animation: 3s slideCard
+}
 
 @keyframes rotate360 { to { rotate: 360deg;} }
 @keyframes slideCard{
