@@ -40,7 +40,7 @@ body {
     text-shadow: 1px 1px 3px #333a;
     padding: 24px;
     padding-right: 42px;
-    display: flex; flex-direction: column; justify-content: end;
+    display: flex; flex-direction: column; justify-content: end; align-items: center;
     h2, p {
         margin: 8px 0;
     }
@@ -52,7 +52,9 @@ body {
         font-weight: 800;
         color: #aaa;
     }
+    
     .button {
+        
         width: fit-content;
         border-radius: 100px;
         padding: 8px 36px;
@@ -76,7 +78,7 @@ body {
         }
         /*our button press function*/
         &:active{
-            background-color: red;
+            background-color: #e7c4a088;
         }
 
         
